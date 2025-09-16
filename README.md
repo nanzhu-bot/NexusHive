@@ -52,28 +52,34 @@
         Workerman 3.5.34
         EMQX 4.4
  ***前端***： 
+ 
         Node
             node.js > 20.19.0
             node.js: 22.x (推荐)
+            
         核心框架
             Vue: 3.5.13 (Vue 3 组合式API)
             TypeScript: 5.7.2
             Vite: 6.3.5 (构建工具)
             Vue Router: 4.5.0 (路由管理)
             Pinia: 2.3.0 (状态管理)
+            
         UI组件库
             Element Plus: 2.9.1 (主要UI组件库)
             Element Plus Icons: 2.3.1 (图标库)
             Font Awesome: 4.7.0 (图标字体)
+            
         地图与3D渲染
             Mars3D: 3.10.0 (三维地球平台)
             Mars3D Cesium: 1.131.1 (Cesium引擎)
             Mars3D Space: 3.10.0 (空间分析)
             @turf/turf: 7.2.0 (地理空间分析)
+            
         通信与实时功能
             MQTT: 5.13.3 (消息队列)
             Agora RTC SDK: 4.23.4 (实时音视频)
             Axios: 1.9.0 (HTTP客户端)
+            
  ***宝塔部署***： 
         
         宝塔新建站点，设置站点目录为public
