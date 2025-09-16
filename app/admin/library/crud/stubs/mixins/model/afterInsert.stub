@@ -1,0 +1,12 @@
+
+    protected static function onAfterInsert($model): void
+    {
+        if (is_null($model->{%field%})) {
+            $pk = $model->getPk();
+            if (strlen($model[$pk]) >= 19) {
+                $model->where($pk, $model[$pk])->update(['{%field%}' => $model->count()]);
+            } else {
+                $model->where($pk, $model[$pk])->update(['{%field%}' => $model[$pk]]);
+            }
+        }
+    }

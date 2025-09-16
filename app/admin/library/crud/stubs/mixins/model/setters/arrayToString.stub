@@ -1,0 +1,5 @@
+
+    public function set{%field%}Attr($value): string
+    {
+        return is_array($value) ? implode(',', $value) : $value;
+    }

@@ -1,0 +1,9 @@
+
+    public function get{%field%}Attr($value): array
+    {
+        if ($value === '' || $value === null) return [];
+        if (!is_array($value)) {
+            return explode(',', $value);
+        }
+        return $value;
+    }

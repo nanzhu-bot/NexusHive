@@ -1,0 +1,61 @@
+{
+    "name": "wonderful-code/buildadmin",
+    "description": "Build your admin framework",
+    "type": "project",
+    "keywords": [
+        "buildadmin",
+        "thinkphp"
+    ],
+    "homepage": "https://uni.buildadmin.com",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "妙码生花",
+            "email": "hi@buildadmin.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0.2",
+        "topthink/framework": "8.1.1",
+        "topthink/think-orm": "3.0.33",
+        "topthink/think-multi-app": "1.1.1",
+        "topthink/think-throttle": "2.0.2",
+        "topthink/think-migration": "3.1.1",
+        "symfony/http-foundation": "^5.4|^6.4|^7.1",
+        "phpmailer/phpmailer": "^6.8",
+        "guzzlehttp/guzzle": "^7.8.1",
+        "voku/anti-xss": "^4.1",
+        "nelexa/zip": "^4.0.0",
+        "ext-bcmath": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-gd": "*",
+        "aliyuncs/oss-sdk-php": "^2.6",
+        "topthink/think-worker": "^4.0",
+        "workerman/mqtt": "^1.7",
+        "ramsey/uuid": "^4.9",
+        "phpoffice/phpspreadsheet": "^5.0"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4",
+        "topthink/think-trace": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app",
+            "modules\\": "modules"
+        },
+        "psr-0": {
+            "": "extend/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "@php think service:discover",
+            "@php think vendor:publish"
+        ]
+    }
+}
