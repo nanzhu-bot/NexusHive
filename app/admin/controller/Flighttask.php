@@ -106,6 +106,9 @@ class Flighttask extends Backend
                 $data['file_url'] = $wayline['kmz'];
                 $data['total_point'] = $wayline['point_num'];
                 $data['status'] = 'sent';
+                if($data['task_type'] < 1){
+                    $data['execute_time'] = time();
+                }
                 $res = $airline->pushTask($data);
                 $result = $this->model->save($data);
                 if($result){

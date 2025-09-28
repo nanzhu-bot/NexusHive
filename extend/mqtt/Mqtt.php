@@ -44,7 +44,7 @@ class Mqtt extends Server
         $this->airline = new Airline();
         $options = [
             'keepalive' => 60,
-            'client_id' => "PUBLISH002232",
+            'client_id' => "PUBLISH0001",
             'clean_session' => true,
             'reconnect_period' => 10,
             'username' => "wangxudong",
@@ -111,9 +111,9 @@ class Mqtt extends Server
         };
         $inner_text_worker->listen();
 
-        #此处为动态订阅，每10秒检查一次是否有新设备，有则订阅---start
         Timer::add(5, function () {
-            $tast_list = Db::name('flighttask')->where('status','sent')->select();
+            $tast_list = Db::name('flighttask')->where('status','sent')->where('execute_time','<=',time())->select();
+            print_r(count($tast_list));
             if ($tast_list) {
                 if (count($tast_list) > 0) {
                     $this->airline->flighttaskReady($tast_list);
